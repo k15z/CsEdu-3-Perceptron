@@ -1,6 +1,6 @@
 ﻿using System;
-using CsEdu_3_Perceptron;
 using System.Drawing;
+using CsEdu_3_Perceptron;
 
 /**
  * BENCHMARK RESULTS:
