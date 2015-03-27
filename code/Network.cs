@@ -206,6 +206,7 @@ namespace CsEdu_3_Perceptron
                      if (Math.Abs(F[p] - T[p]) < MARGIN_OF_ERROR)
                         points++;
                }
+               Console.WriteLine(points + "/" + MAX_POINTS);
             }
          }
 
