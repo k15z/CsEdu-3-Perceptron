@@ -1,9 +1,5 @@
-﻿using CsEdu_3_Perceptron;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using CsEdu_3_Perceptron;
 
 /**
  * This class contains the main entry point for this project. It creates a new Network and attempts to 

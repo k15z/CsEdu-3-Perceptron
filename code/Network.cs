@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /**
  * This file contains a C# implementation of the multilayer perceptron with three layers of weights that 
