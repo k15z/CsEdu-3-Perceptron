@@ -89,26 +89,27 @@ class Program
       int N = 26;
       float[][] input = new float[N][];
       float[][] output = new float[N][];
-      for (char c = 'A'; c < 'Z'; c++)
+      for (char c = 'A'; c <= 'Z'; c++)
       {
          int n = (int)(c - 'A');
          Bitmap img = new Bitmap(Image.FromFile("img/" + c + ".bmp"));
-
          int i = 0;
          input[n] = new float[img.Height * img.Width];
          for (int row = 0; row < img.Height; row++)
             for (int col = 0; col < img.Width; col++)
                input[n][i++] = img.GetPixel(col, row).GetBrightness();
 
-         output[n] = new float[N];
-         output[n][n] = 1.0f;
+         output[n] = new float[5];
+         output[n][0] = ((n & (1 << 0)) != 0) ? 1.0f : 0.0f;
+         output[n][1] = ((n & (1 << 1)) != 0) ? 1.0f : 0.0f;
+         output[n][2] = ((n & (1 << 2)) != 0) ? 1.0f : 0.0f;
+         output[n][3] = ((n & (1 << 3)) != 0) ? 1.0f : 0.0f;
+         output[n][4] = ((n & (1 << 4)) != 0) ? 1.0f : 0.0f;
       }
 
-      int S, R, Q, P;
-      S = input[0].Length;
-      P = output[0].Length;
-      R = (new Random()).Next(P, S/2);
-      Q = (new Random()).Next(P, S/3);
+      int S = input[0].Length, P = output[0].Length;
+      int R = (new Random()).Next(P, S/5);
+      int Q = (new Random()).Next(P, S/10);
       Console.WriteLine(S + " -> " + R + " -> " + Q + " -> " + P);
       Network net = new Network(S, R, Q, P);
       net.train(N, input, output);

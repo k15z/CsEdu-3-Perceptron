@@ -150,9 +150,9 @@ namespace CsEdu_3_Perceptron
 
          int attempts = 0;
          int MAX_ATTEMPTS = 1000;
-         int RESCORE_INTERVAL = 10;
+         int RESCORE_INTERVAL = 1;
 
-         while (points < MAX_POINTS && attempts < MAX_ATTEMPTS)
+         while (points < MAX_POINTS && attempts++ < MAX_ATTEMPTS)
          {
             float deriv;
             for (int n = 0; n < N; n++)
@@ -206,7 +206,7 @@ namespace CsEdu_3_Perceptron
                      if (Math.Abs(F[p] - T[p]) < MARGIN_OF_ERROR)
                         points++;
                }
-               Console.WriteLine(points + "/" + MAX_POINTS);
+               Console.WriteLine("Attempt #" + attempts + ": " + points + "/" + MAX_POINTS);
             }
          }
 
