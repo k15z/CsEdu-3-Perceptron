@@ -108,8 +108,8 @@ class Program
       }
 
       int S = input[0].Length, P = output[0].Length;
-      int R = (new Random()).Next(P, S/5);
-      int Q = (new Random()).Next(P, S/10);
+      int R = (new Random()).Next(P, S/2);
+      int Q = (new Random()).Next(P, S/5);
       Console.WriteLine(S + " -> " + R + " -> " + Q + " -> " + P);
       Network net = new Network(S, R, Q, P);
       net.train(N, input, output);
