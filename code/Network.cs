@@ -154,7 +154,7 @@ namespace CsEdu_3_Perceptron
 
          while (points < MAX_POINTS && attempts < MAX_ATTEMPTS)
          {
-            float derivative;
+            float deriv;
             for (int n = 0; n < N; n++)
             {
                float[] F = this.feed(input[n]);
@@ -171,8 +171,8 @@ namespace CsEdu_3_Perceptron
                   for (int p = 0; p < P; p++)
                   {
                      bp_p[p] = (F[p] - T[p]) * Utils.dSigmoid(n4[p]);
-                     derivative = bp_p[p] * a3[q];
-                     w34[q, p] += -lr_p[p] * derivative;
+                     deriv = bp_p[p] * a3[q];
+                     w34[q, p] += -lr_p[p] * deriv;
                   }
 
                for (int r = 0; r < R; r++)
@@ -180,8 +180,8 @@ namespace CsEdu_3_Perceptron
                      for (int p = 0; p < P; p++)
                      {
                         bp_q_p[q, p] = w34[q, p] * Utils.dSigmoid(n3[q]);
-                        derivative = bp_p[p] * bp_q_p[q, p] * a2[r];
-                        w23[r, q] += -lr_p[p] * derivative;
+                        deriv = bp_p[p] * bp_q_p[q, p] * a2[r];
+                        w23[r, q] += -lr_p[p] * deriv;
                      }
 
                for (int s = 0; s < S; s++)
@@ -189,8 +189,8 @@ namespace CsEdu_3_Perceptron
                      for (int p = 0; p < P; p++)
                         for (int q = 0; q < Q; q++)
                         {
-                           derivative = bp_p[p] * bp_q_p[q, p] * (w23[r, q] * Utils.dSigmoid(n2[r]) * a1[s]);
-                           w12[s, r] += -lr_p[p] * derivative;
+                           deriv = bp_p[p] * bp_q_p[q, p] * (w23[r, q] * Utils.dSigmoid(n2[r]) * a1[s]);
+                           w12[s, r] += -lr_p[p] * deriv;
                         }
 
             }
