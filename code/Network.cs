@@ -150,7 +150,7 @@ namespace CsEdu_3_Perceptron
 
          int attempts = 0;
          int MAX_ATTEMPTS = 1000;
-         int RESCORE_INTERVAL = 100;
+         int RESCORE_INTERVAL = 10;
 
          while (points < MAX_POINTS && attempts < MAX_ATTEMPTS)
          {
