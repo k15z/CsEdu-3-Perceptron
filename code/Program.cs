@@ -47,7 +47,7 @@ class Program
 
    static void boxCrossProblem()
    {
-      Network net = new Network(2, 5, 5, 2);
+      Network net = new Network(81, 5, 5, 2);
 
       int N = 2;
       float[][] input = new float[N][];
